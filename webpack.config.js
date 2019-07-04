@@ -1,26 +1,24 @@
 const path = require('path');
-const merge = require('webpack-merge');
-const baseConfig = require('./webpack.base.js');
-var webpack = require('webpack');
 
-module.exports = merge(baseConfig, {
-    mode:'development',
-    output: {
-        filename: "[name].js",
-        path: path.resolve(__dirname, 'dist')
-    },
-    devtool:'source-map',
-    plugins: [
-        new webpack.EnvironmentPlugin({
-            NODE_ENV: 'development', // use 'development' unless process.env.NODE_ENV is defined
-            DEBUG: false
-        })
-    ],
-    watch: true,
-    devServer: {
-        contentBase: path.join(__dirname, "dist"),
-        watchContentBase: true,
-        compress: true,
-        port: 9000
-      }
-});
+const baseConfig = {
+	root: path.resolve(__dirname),
+};
+
+module.exports = function (env) {
+	const c = Object.assign(baseConfig, {
+		IS_PRD: env === 'prd',
+		NODE_ENV: env === 'prd' ? 'production' : 'development'
+	});
+
+	if (env === 'dev') {
+		return require('./webpack/webpack.dev.js')(c);
+	} else if (env === 'prd') {
+		return require('./webpack/webpack.prd.js')(c);
+	}
+
+	console.info(
+		'Wrong build parameters.' + '\n' +
+		'Usage:' + '\n' +
+		'`webpack -p --env dev` or `webpack -p --env prd`'
+	);
+};
