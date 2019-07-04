@@ -28,7 +28,7 @@ module.exports = function (config) {
 					exclude: [/node_modules/, nodeModulesPath]
 				},
 				{
-					test: /\.css$/,
+					test: /\.(css|scss)$/,
 					use: [
 						'style-loader',
 						{
@@ -38,7 +38,8 @@ module.exports = function (config) {
 								namedExport: true,
 								localIdentName: '[name]__[local]--[hash:base64:5]'
 							}
-						}
+						},
+						'sass-loader'
 					],
 				}
 			]
