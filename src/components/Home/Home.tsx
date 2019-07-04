@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ITodo, Status } from '../../Types';
+import { ITodo, Status } from '@ibt-root/models';
 
 import * as styles from './Home.css';
 import { GetTextFromInput, CreateNewTodo } from './Home.fn';
@@ -18,7 +18,7 @@ export interface IHomeState {
     newTodoInput: string
 }
 
-export default class Home extends React.Component<IHomeProps, IHomeState> {
+export class Home extends React.Component<IHomeProps, IHomeState> {
     constructor(props: IHomeProps) {
         super(props);
 
@@ -39,7 +39,7 @@ export default class Home extends React.Component<IHomeProps, IHomeState> {
                         <h2>In Progress</h2>
                         <div className={`${styles.cardContainer} ${styles.inProgressContainer}`}>
                         {
-                            this.props.todos.filter(todo => todo.status === Status.InProgress).map(todo => 
+                            this.props.todos.filter(todo => todo.status === Status.InProgress).map(todo =>
                                 <Card key={`crd-ip-${todo.id}`} id={todo.id}>
                                     <div>
                                         {/* <div><Label onRender={(renderProps:any, render:any) => {
@@ -59,7 +59,7 @@ export default class Home extends React.Component<IHomeProps, IHomeState> {
                         <h2>Complete</h2>
                         <div className={`${styles.cardContainer} ${styles.completeContainer}`}>
                         {
-                            this.props.todos.filter(todo => todo.status === Status.Complete).map(todo => 
+                            this.props.todos.filter(todo => todo.status === Status.Complete).map(todo =>
                                 <Card key={`crd-cmp-${todo.id}`} id={todo.id}>
                                     <div>
                                         {/* <div><Label onRender={(renderProps:any, render:any) => {

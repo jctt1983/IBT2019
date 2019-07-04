@@ -1,4 +1,4 @@
-import { ITodo, Status } from "../../Types";
+import { ITodo, Status } from '@ibt-root/models';
 
 export function GetTextFromInput (caller:React.FormEvent<HTMLInputElement>) {
     return caller.currentTarget.value;

@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { shallow, ShallowWrapper } from 'enzyme';
 
-import Home from './Home';
+import { Home } from './Home';
 
 import * as Enzyme from 'enzyme';
 import * as EnzymeAdapter from 'enzyme-adapter-react-16';
 
-import { ITodo, Status } from '../../Types';
+import { ITodo, Status } from '@ibt-root/models';
 import * as styles from './Home.css';
 import { CreateNewTodo } from './Home.fn';
 

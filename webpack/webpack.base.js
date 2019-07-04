@@ -10,7 +10,11 @@ module.exports = function (config) {
 			IBT: './src/IBT.tsx'
 		},
 		resolve: {
-			extensions: [".ts", ".tsx", ".js", ".json"]
+			extensions: [".ts", ".tsx", ".js", ".json"],
+			alias: {
+				'@ibt-root': path.resolve(config.root, './src'),
+				'@ibt-components': path.resolve(config.root, './src/components'),
+			},
 		},
 		module: {
 			rules: [
