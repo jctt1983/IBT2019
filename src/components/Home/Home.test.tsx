@@ -6,7 +6,7 @@ import { Home } from './Home';
 import * as Enzyme from 'enzyme';
 import * as EnzymeAdapter from 'enzyme-adapter-react-16';
 
-import { ITodo, Status } from '@ibt-root/models';
+import { ITodo, Status } from '@ibt-models';
 import * as styles from './Home.css';
 import { CreateNewTodo } from './Home.fn';
 

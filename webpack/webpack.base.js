@@ -14,6 +14,7 @@ module.exports = function (config) {
 			alias: {
 				'@ibt-root': path.resolve(config.root, './src'),
 				'@ibt-components': path.resolve(config.root, './src/components'),
+				'@ibt-models': path.resolve(config.root, './src/models'),
 			},
 		},
 		module: {

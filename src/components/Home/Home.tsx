@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ITodo, Status } from '@ibt-root/models';
+import { ITodo, Status } from '@ibt-models';
 import { Label, Icon, DraggableCard } from '@ibt-components';
 
 import * as styles from './Home.css';

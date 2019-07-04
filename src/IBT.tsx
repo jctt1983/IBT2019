@@ -3,7 +3,7 @@ import 'react-app-polyfill/ie11';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
-import { ITodo, Status } from '@ibt-root/models';
+import { ITodo, Status } from '@ibt-models';
 import { Home } from '@ibt-components';
 import * as styles from '@ibt-root/IBT';
 
