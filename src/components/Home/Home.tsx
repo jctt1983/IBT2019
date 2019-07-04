@@ -1,20 +1,16 @@
 import * as React from 'react';
 import { ITodo, Status } from '@ibt-root/models';
+import { Label, Icon, DraggableCard } from '@ibt-components';
 
 import * as styles from './Home.css';
 import { GetTextFromInput, CreateNewTodo } from './Home.fn';
 
-// Todo: Implement components
-// import Label from '?';
-// import Icon from '?';
-// import DraggableCard from '?';
-
-export interface IHomeProps {
+interface IHomeProps {
     todos: ITodo[],
     onAdd: (newTodo:ITodo) => void
 }
 
-export interface IHomeState {
+interface IHomeState {
     newTodoInput: string
 }
 
@@ -47,7 +43,7 @@ export class Home extends React.Component<IHomeProps, IHomeState> {
                                                 <span>{renderProps.children} <Icon icon='?' rotate={false} size='small' /></span>
                                             );
                                         }}>{todo.title}</Label></div> */}
-                                        <div><strong>{todo.title}</strong></div>
+                                        <div><Label></Label><strong>{todo.title}</strong></div>
                                         <div>{todo.description}</div>
                                     </div>
                                 </Card>
