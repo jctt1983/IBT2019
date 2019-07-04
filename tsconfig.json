@@ -1,25 +1,25 @@
 {
-    "compilerOptions": {
-        "outDir": "./out/src",
-        "sourceMap": true,
-        "noImplicitAny": false,
-        "module": "commonjs",
-        "target": "es6",
-        "jsx": "react",
-        "experimentalDecorators": true,
-        "strictNullChecks": false,
-        "moduleResolution": "node",
-        "rootDir": "src"
-    },
-    "include": [
-        "./src/**/*"
-    ],
-    "awesomeTypescriptLoaderOptions": {
-      "reportFiles": [
-        "./src/Components/**/*"
-      ],
-      "useBabel": true,
-      "strictNullChecks": false,
-      "noImplicitAny": false
-    }
+	"compilerOptions": {
+		"outDir": "./out/src",
+		"sourceMap": true,
+		"noImplicitAny": false,
+		"module": "commonjs",
+		"target": "es6",
+		"jsx": "react",
+		"experimentalDecorators": true,
+		"strictNullChecks": false,
+		"moduleResolution": "node",
+		"rootDir": "src"
+	},
+	"include": [
+		"./src/**/*"
+	],
+	"awesomeTypescriptLoaderOptions": {
+		"reportFiles": [
+			"./src/Components/**/*"
+		],
+		"useBabel": true,
+		"strictNullChecks": false,
+		"noImplicitAny": false
+	}
 }
