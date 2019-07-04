@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = function (config) {
 	let nodeModulesPath = path.resolve(config.root, 'node_modules');
@@ -43,10 +44,13 @@ module.exports = function (config) {
 			]
 		},
 		plugins: [
+			new HtmlWebpackPlugin({
+				template: config.template
+			}),
 			new webpack.EnvironmentPlugin({
 				NODE_ENV: config.NODE_ENV || 'development', // use 'development' unless config.NODE_ENV is defined
 				DEBUG: false
 			})
 		]
-	}
+	};
 };

@@ -2,6 +2,7 @@ const path = require('path');
 
 const baseConfig = {
 	root: path.resolve(__dirname),
+	template: path.resolve(__dirname, './src/index.html'),
 };
 
 module.exports = function (env) {
